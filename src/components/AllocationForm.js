@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+    const { dispatch,remaining, currency  } = useContext(AppContext);
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
+    const cur = {currency};
     const submitEvent = () => {
             if(cost > remaining) {
-                alert("The value cannot exceed remaining funds  £"+remaining);
+                alert("The value cannot exceed remaining funds " +remaining);
                 setCost("");
                 return;
             }
@@ -50,15 +52,18 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
+                <div className="inputprefix" style={{ marginLeft: '2rem',display: "flex", marginLeft: "15px"}}>
+                    <div style={{ marginRight: '2px',marginBottom: '3px'}}>{currency}</div>
                     <input
                         step = "10"
                         required='required'
                         type='number'
                         id='cost'
                         value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        style={{size: 10}}
                         onChange={(event) => setCost(event.target.value)}>
                         </input>
+                </div>
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
                     </button>

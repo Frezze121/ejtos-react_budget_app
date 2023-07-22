@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+.currency {
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #d1ffd1;
+}
+
+.cur-option:hover {
+    color: black;
+    background-color: white;
+}
+
+.increase-btn {
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 100%;
+    background: #1dbd1d;
+    color: white;
+    font-size: 30px;
+    font-weight: 999;
+    font-family: revert;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decrease-btn {
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 100%;
+    background: #bd1d1d;
+    color: white;
+    font-size: 40px;
+    font-weight: 999;
+    font-family: monospace;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
